@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.sjq.nthttputils.UrlCheckUtils;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -18,8 +20,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        TextView tv1=findViewById(R.id.tv1);
-        tv1.setOnClickListener(new View.OnClickListener() {
+        TextView tv2=findViewById(R.id.tv2);
+        tv2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 HashMap<String, String> obj = new HashMap<String, String>();
@@ -43,6 +45,18 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(MainActivity.this, "SERVER ERROR", Toast.LENGTH_SHORT).show();
                     }
                 });
+            }
+        });
+
+        TextView tv1=findViewById(R.id.tv1);
+        tv1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //你的URl
+               String url="http://10.101.0.90:9966/.......";
+               //检测过后的URL
+               url= UrlCheckUtils.checkUrl(url,1);
+
             }
         });
 

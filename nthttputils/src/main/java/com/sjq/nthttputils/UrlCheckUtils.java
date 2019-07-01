@@ -2,21 +2,22 @@ package com.sjq.nthttputils;
 
 import android.util.Log;
 
+import com.sjq.nthttputils.utils.Constant;
+
 import java.io.IOException;
 
 public class UrlCheckUtils {
 
-    public final String GKIP = "10.101.0.90";
 
     public String checkUrl(String url, int type) {
         if (type == 1) {
             boolean isexist = startPing("192.168.30.188");
             if (isexist) {
-                url = url.replace(GKIP, "192.168.30.188");
+                url = url.replace(Constant.GKIP, "192.168.30.188");
             } else {
                 isexist = startPing("10.101.0.90");
                 if (isexist) {
-                    url = url.replace(GKIP, "10.101.0.90");
+                    url = url.replace(Constant.GKIP, "10.101.0.90");
                 }
             }
         }

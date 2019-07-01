@@ -5,6 +5,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.sjq.nthttputils.request.RequestCall;
+import com.sjq.nthttputils.utils.Constant;
 
 import java.io.IOException;
 import java.util.LinkedHashMap;
@@ -29,10 +30,13 @@ public abstract class OkHttpRequestBuilder<T extends OkHttpRequestBuilder>
 
     public T url(String url)
     {
-        if(url.indexOf("192.168.30.188")>=0){
-            isexist= startPing("192.168.30.188");
-            if(!isexist){
-                url=url.replace("192.168.30.188","10.101.0.90").replace("9966","9967");
+        boolean isexist = startPing("192.168.30.188");
+        if (isexist) {
+            url = url.replace(Constant.GKIP, "192.168.30.188");
+        } else {
+            isexist = startPing("10.101.0.90");
+            if (isexist) {
+                url = url.replace(Constant.GKIP, "10.101.0.90");
             }
         }
         this.url = url;

@@ -6,10 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.sjq.nthttputils.UrlCheckUtils;
-
-import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.HashMap;

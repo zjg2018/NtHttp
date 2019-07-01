@@ -15,10 +15,7 @@ public class UrlCheckUtils {
             if (isexist) {
                 url = url.replace(Constant.GKIP, "192.168.30.188");
             } else {
-                isexist = startPing("10.101.0.90");
-                if (isexist) {
-                    url = url.replace(Constant.GKIP, "10.101.0.90");
-                }
+               url = url.replace(Constant.GKIP, "10.101.0.90");
             }
         }
         return url;

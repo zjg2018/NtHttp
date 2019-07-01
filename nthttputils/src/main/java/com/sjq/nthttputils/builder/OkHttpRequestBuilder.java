@@ -4,6 +4,7 @@ package com.sjq.nthttputils.builder;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.sjq.nthttputils.UrlCheckUtils;
 import com.sjq.nthttputils.request.RequestCall;
 import com.sjq.nthttputils.utils.Constant;
 
@@ -30,15 +31,7 @@ public abstract class OkHttpRequestBuilder<T extends OkHttpRequestBuilder>
 
     public T url(String url)
     {
-        boolean isexist = startPing("192.168.30.188");
-        if (isexist) {
-            url = url.replace(Constant.GKIP, "192.168.30.188");
-        } else {
-            isexist = startPing("10.101.0.90");
-            if (isexist) {
-                url = url.replace(Constant.GKIP, "10.101.0.90");
-            }
-        }
+        url= UrlCheckUtils.checkUrl( url,1);
         this.url = url;
         return (T) this;
     }

@@ -9,7 +9,7 @@ import java.io.IOException;
 public class UrlCheckUtils {
 
 
-    public String checkUrl(String url, int type) {
+    public static String checkUrl(String url, int type) {
         if (type == 1) {
             boolean isexist = startPing("192.168.30.188");
             if (isexist) {
@@ -24,7 +24,7 @@ public class UrlCheckUtils {
         return url;
     }
 
-    private boolean startPing(String ip) {
+    private static boolean  startPing(String ip) {
         boolean isexist = false;
         Process process = null;
 

@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
                //检测过后的URL
                url= UrlCheckUtils.checkUrl(url,1);
 
+               Toast.makeText(MainActivity.this, "新的" +url, Toast.LENGTH_SHORT).show();
             }
         });
 

@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 //你的URl
                String url="http://10.101.0.90:9966/.......";
                //检测过后的URL
-               url= UrlCheckUtils.checkUrl(url,1);
+               url= UrlCheckUtils.checkUrl(url,"192.168.30.188","10.101.0.90",1);
 
                Toast.makeText(MainActivity.this, "新的" +url, Toast.LENGTH_SHORT).show();
             }

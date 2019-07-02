@@ -18,6 +18,8 @@ import java.util.Map;
 public abstract class OkHttpRequestBuilder<T extends OkHttpRequestBuilder>
 {
     protected String url;
+    protected String nwIp;
+    protected String zwIp;
     protected Object tag;
     protected Map<String, String> headers;
     protected Map<String, String> params;
@@ -31,10 +33,22 @@ public abstract class OkHttpRequestBuilder<T extends OkHttpRequestBuilder>
 
     public T url(String url)
     {
-        url= UrlCheckUtils.checkUrl( url,1);
+        url= UrlCheckUtils.checkUrl( url,nwIp,zwIp,1);
         this.url = url;
         return (T) this;
     }
+
+    public T nwIp(String nwIp)
+    {
+        this.nwIp = nwIp;
+        return (T) this;
+    }
+    public T zwIp(String zwIp)
+    {
+        this.zwIp = zwIp;
+        return (T) this;
+    }
+
 
 
     public T tag(Object tag)

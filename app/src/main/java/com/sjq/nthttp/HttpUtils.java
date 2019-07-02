@@ -30,6 +30,8 @@ public class HttpUtils {
         }
 
         postFormBuilder
+                .nwIp("192.168.30.188")
+                .zwIp("10.101.0.90")
                 .url(Constants.BaseUrl + url)
                 .build()
                 .readTimeOut(30000L)

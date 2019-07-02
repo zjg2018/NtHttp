@@ -7,8 +7,12 @@ import com.sjq.nthttputils.utils.Constant;
 import java.io.IOException;
 
 public class UrlCheckUtils {
-
-
+   /*****
+    url         你的url地址
+    nwip        三类区内网IP
+    zwip        二类区专网IP
+    type        预留  默认为1
+   ****/
     public static String checkUrl(String url, String nwip,String zwip, int type) {
         if (type == 1) {
             boolean isexist = startPing(nwip);

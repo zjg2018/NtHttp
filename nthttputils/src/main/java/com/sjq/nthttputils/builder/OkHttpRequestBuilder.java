@@ -24,7 +24,6 @@ public abstract class OkHttpRequestBuilder<T extends OkHttpRequestBuilder>
     protected Map<String, String> headers;
     protected Map<String, String> params;
     protected int id;
-    protected  boolean  isexist;
     public T id(int id)
     {
         this.id = id;

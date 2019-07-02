@@ -9,13 +9,13 @@ import java.io.IOException;
 public class UrlCheckUtils {
 
 
-    public static String checkUrl(String url, int type) {
+    public static String checkUrl(String url, String nwip,String zwip, int type) {
         if (type == 1) {
-            boolean isexist = startPing("192.168.30.188");
+            boolean isexist = startPing(nwip);
             if (isexist) {
-                url = url.replace(Constant.GKIP, "192.168.30.188");
+                url = url.replace(nwip, nwip);
             } else {
-               url = url.replace(Constant.GKIP, "10.101.0.90");
+                url = url.replace(nwip, zwip);
             }
         }
         return url;
